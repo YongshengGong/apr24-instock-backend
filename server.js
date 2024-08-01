@@ -12,6 +12,10 @@ dotenv.config();
 const port = process.env.PORT || 8080;
 app.use(cors(/*{ origin: process.env.FRONT_END }*/));
 
+app.get('/', (req, res) => {
+  res.send(`<h1>Welcome to my instock backend</h1>`);
+});
+
 app.use("/warehouses", warehouses);
 app.use("/inventory", inventory);
 app.use("/api", ApiRouter);
